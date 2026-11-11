@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>声迹 · 媒体嗅探</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <header><a class="brand" href="#" aria-label="声迹首页"><span class="logo" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span>声迹<small>SOUNDTRACE</small></span></a><span class="live"><b></b>本地嗅探</span></header>
+  <main>
+    <section class="intro"><div class="eyebrow">FOLLOW THE SOUND.</div><h1>让媒体，<em>有迹可循。</em></h1><p id="pageTitle">识别当前页面正在加载的音视频</p></section>
+    <section class="toolbar"><div class="filters" role="group" aria-label="媒体类型筛选"><button class="selected" data-filter="all" aria-pressed="true">全部 <span id="count">0</span></button><button data-filter="audio" aria-pressed="false">音频</button><button data-filter="video" aria-pressed="false">视频</button></div><button id="scan" class="scan" title="重新扫描页面">↻ <span>重新扫描</span></button></section>
+    <aside id="notice" hidden></aside>
+    <div id="list" aria-live="polite"></div>
+    <div id="empty" class="empty"><div class="radar"><span>⌁</span></div><h2>等待一个声音</h2><p>在页面播放音频或视频，再点「重新扫描」。<br>首次安装后，请先刷新目标网页。</p></div>
+  </main>
+  <footer><span>仅在本机处理 · 不上传链接</span><button id="clear">清空记录</button></footer>
+  <div id="toast" role="status" hidden></div>
+  <template id="cardTemplate"><article class="media-card"><div class="media-top"><div class="format"></div><div class="media-heading"><h2></h2><p class="meta"></p></div><span class="verified"></span></div><div class="wave" aria-hidden="true"></div><div class="source"></div><div class="actions"><button class="copy">复制链接</button><button class="download">↓ 保存文件</button></div><p class="download-state" hidden></p><details><summary>查看完整地址</summary><code></code></details></article></template>
+  <script src="core.js"></script><script src="popup.js"></script>
+</body></html>

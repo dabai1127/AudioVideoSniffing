@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "声迹 · 音视频嗅探",
+  "version": "1.0.0",
+  "description": "按标签页识别 MP3、MP4、M4A 等实际媒体来源，支持 Suno media_urls、播放器与网络响应。",
+  "minimum_chrome_version": "120",
+  "permissions": ["webRequest", "storage", "downloads", "scripting", "activeTab"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_title": "声迹 · 查看媒体", "default_popup": "popup.html"},
+  "content_scripts": [
+    {"matches": ["http://*/*", "https://*/*"], "js": ["page-hook.js"], "run_at": "document_start", "world": "MAIN", "all_frames": true},
+    {"matches": ["http://*/*", "https://*/*"], "js": ["core.js", "content.js"], "run_at": "document_start", "all_frames": true}
+  ],
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'self'"}
+}
