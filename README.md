@@ -2,6 +2,8 @@
 
 Chrome / Edge Manifest V3 插件，识别当前页面实际加载的音视频地址，支持复制链接和使用浏览器保存文件。无需安装依赖或构建。
 
+![](https://github.com/dabai1127/AudioVideoSniffing/blob/main/preview.png?raw=true)
+
 ## 安装与使用
 
 1. Chrome 打开 `chrome://extensions`，Edge 打开 `edge://extensions`。
